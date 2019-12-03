@@ -1,3 +1,6 @@
+#import wikipedia
+#BASIC FUNCTIONS FOR QUERY GIVEN
+
 def get_name(page):
     print("Page name: %s" % page.title)
 
