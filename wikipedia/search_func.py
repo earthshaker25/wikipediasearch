@@ -1,3 +1,5 @@
+import webbrowser
+
 def search_page_for_word(page,word):
     if word in page.content:
         print("The word '%s' is in this page!" % word)
