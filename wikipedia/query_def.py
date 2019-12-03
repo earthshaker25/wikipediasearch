@@ -34,6 +34,11 @@ def query_given(query):
             index = int(index)
             print("You chose index %s" % index)
             open_image(query,index)
+        elif "open link" in do:
+            index = do[10:]
+            index = int(index)
+            print("You chose index %s" % index)
+            open_link(query,index)
         elif "len list" in do:
             print(len(query.images))
         elif "find" in do:
