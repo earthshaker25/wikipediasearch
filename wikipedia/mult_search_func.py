@@ -20,6 +20,6 @@ def multsearch(list1,word):
                 else:
                     print("%s: False" % p)
     except wikipedia.exceptions.DisambiguationError:
-        pass
+        print("'%s' was too vague" % v)
     print("Result: %s/%s contain the word '%s'" % (len(contains),(len(list1)),word))
 
