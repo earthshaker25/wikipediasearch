@@ -1,23 +1,9 @@
 #Working Code
 import wikipedia
-import webbrowser
 from search_func import *
 from basic_func import *
+from mult_search_func import multsearch
 
-#keep this in wiki.py
-while True:
-    try:
-        search = input("Enter your initial query: ")
-        query = wikipedia.page(search)
-    except wikipedia.exceptions.DisambiguationError:
-        check = input("Be more specific! Would you like a list of all relevant pages? [y/n]: ")
-        if "y" in check:
-            print(wikipedia.search(search,results=100))
-            continue
-        else:
-            continue
-    print("Intial Query Found: %s" % query)
-    break
 
 #Function to change query, keep in wiki py
 def get_new_query():
@@ -56,8 +42,8 @@ while True:
     elif "links" in do:
         get_links(query)
     #Extra Special Functions
-    elif "search" in do:
-        sw = do[7:]
+    elif "find" in do:
+        sw = do[5:]
         search_page_for_word(query,sw)
     elif "open image" in do:
         index = do[11:]
@@ -66,6 +52,11 @@ while True:
         open_image(query,index)
     elif "len list" in do:
         print(len(query.images))
+    elif "mult search" in do:
+        sw = do[12:]
+        pagesdata = input("Enter pages separated by comma: ")
+        pageslist = list(pagesdata.split(","))
+        multsearch(pageslist,sw)
     #Special functions
     elif "quit" in do:
         break
