@@ -1,5 +1,6 @@
 from basic_func import *
 from search_func import *
+from content_to_list import *
 
 #INPUTS FOR QUERY GIVEN
 
@@ -29,6 +30,10 @@ def query_given(query):
             open_image(query,index)
         elif "len list" in do:
             print(len(query.images))
+        elif "find" in do:
+            n=1
+            sw = do[5:]
+            report_sentences(query,sw)
         elif "quit" in do:
             print("Query actions exited")
             break

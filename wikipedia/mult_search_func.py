@@ -1,5 +1,5 @@
 import wikipedia
-
+#SEARCHING FOR A SPECIFIC WORD
 def multsearch(list1,word):
     pages = []
     contains = []
@@ -22,4 +22,15 @@ def multsearch(list1,word):
     except wikipedia.exceptions.DisambiguationError:
         print("'%s' was too vague" % v)
     print("Result: %s/%s contain the word '%s'" % (len(contains),(len(list1)),word))
+
+#SING WORD FOR CONTENT PRINT
+
+def singsearch(page,word):
+    page = wikipedia.page(page)
+    if word in page.content:
+        print("'%s' was found on this page!" % word)
+        return True
+    else:
+        print("'%s' not found" % word)
+        return False
 

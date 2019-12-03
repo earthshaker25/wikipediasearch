@@ -4,6 +4,7 @@ from search_func import *
 from basic_func import *
 from mult_search_func import multsearch
 from query_def import * #give query options
+from content_to_list import * #lists of sentences
 
 #Function to define and work with a query
 def get_new_query():
@@ -28,15 +29,21 @@ def get_new_query():
 while True:
     #Input Line
     do = input("Next: ")
-    #Basic Page Functions
     if "new" in do:
         get_new_query() #keep funcdef in wiki.py
-    elif "mult search" in do:
-        sw = do[12:]
+    elif "mult" in do:
+        sw = do[5:]
         pagesdata = input("Enter pages separated by comma: ")
         pageslist = list(pagesdata.split(","))
         multsearch(pageslist,sw)
-    #Special functions
+    elif "find" in do:
+        n=1
+        sw = do[5:]
+        query = input("Enter page to search: ")
+        report_sentences(query,sw)
+    elif "search" in do:
+        query = do[7:]
+        print(wikipedia.search(query))
     elif "quit" in do:
         break
     elif "-h" in do:
