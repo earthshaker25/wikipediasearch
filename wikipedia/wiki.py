@@ -21,6 +21,9 @@ def get_new_query():
                 continue
             else:
                 continue
+        except wikipedia.exceptions.PageError:
+            print("That page apparently does not exist. Please try again")
+            continue
         print("New Query Found: %s" % query)
         query_given(query) #from import
         break
