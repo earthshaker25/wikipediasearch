@@ -18,3 +18,12 @@ def get_images(page):
 
 def get_links(page):
     print(page.links)
+
+def get_categories(page):
+    print(page.categories)
+
+def get_references(page):
+    print(page.references)
+
+def get_sections(page):
+    print(page.sections)

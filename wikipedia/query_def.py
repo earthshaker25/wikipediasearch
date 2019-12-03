@@ -19,6 +19,12 @@ def query_given(query):
             get_images(query)
         elif "links" in do:
             get_links(query)
+        elif "categories" in do:
+            get_categories(query)
+        elif "references" in do:
+            get_references(query)
+        elif "sections" in do:
+            get_sections(query)
         #Extra Special Functions from search_func
         elif "search" in do:
             sw = do[7:]
