@@ -43,11 +43,12 @@ while True:
         pagesdata = input("Enter pages separated by comma or index num: ")
         if "," in pagesdata:
             pageslist = list(pagesdata.split(","))
-            search_history(pageslist) # NOT DEFINED ERROR
-            multsearch(pageslist,sw)
+            store_original_length(pageslist)
+            search_history(pageslist)
+            multsearch(pageslist,sw,[])
         elif "," not in pagesdata:
             indexnum = int(pagesdata)
-            multsearch(search_history_list[indexnum],sw)
+            multsearch(search_history_list[indexnum],sw,[])
     elif "report sent" in do:
         n=1
         sw = do[12:]
