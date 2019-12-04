@@ -1,5 +1,7 @@
 #MAIN CODE
 import wikipedia
+import sys
+from termcolor import colored,cprint
 from search_func import *
 from basic_func import *
 from mult_search_func import *

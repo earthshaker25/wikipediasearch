@@ -4,7 +4,7 @@
 def find_image_index(page,find):
     l = page.images
     for x in l:
-        l.lower() 
+        x.lower() 
         for i in l:
             if find in i:
                 print("'%s' found at index: %s" % (find, l.index(i)))
@@ -14,7 +14,7 @@ def find_image_index(page,find):
 def find_reference_index(page,find):
     l = page.references
     for x in l:
-        l.lower() 
+        x.lower() 
         for i in l:
             if find in i:
                 print("'%s' found at index: %s" % (find, l.index(i)))

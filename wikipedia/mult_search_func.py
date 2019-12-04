@@ -1,4 +1,6 @@
 import wikipedia
+import sys
+from termcolor import colored,cprint
 #SEARCHING FOR A SPECIFIC WORD AMONG MULTIPLE PAGES
 
 
@@ -39,15 +41,15 @@ def multsearch(list1,word,contains=[]):
                             continue
                         else:
                             contains.append(p)
-                            print("%s, %s: True" % (p,w))
+                            cprint("%s, %s: True" % (p,w),'green')
                     else: #Does not loop through everyword
                         if (p not in notcontains) and (p not in contains):
                             notcontains.append(p)
-                            print("%s, %s: False" % (p,w))
+                            cprint("%s, %s: False" % (p,w),'red')
                         else:
                             continue
     except wikipedia.exceptions.DisambiguationError:
-        print("'%s' was too vague" % v) # v is input,list to use is list1
+        cprint("'%s' was too vague" % v,'yellow') # v is input,list to use is list1
         correction = input("Please specify your term: ")
         #Get index of error
         errorindex = list1.index(v)
@@ -62,7 +64,7 @@ def multsearch(list1,word,contains=[]):
     #print("Final %s " % contains)
     #print("Final not%s " % notcontains)
     if (len(list1)==original_length_of_list):
-        print("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word))
+        cprint("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word),'blue')
     else:
         pass
 
