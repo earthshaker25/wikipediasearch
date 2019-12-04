@@ -2,7 +2,7 @@
 import wikipedia
 from search_func import *
 from basic_func import *
-from mult_search_func import multsearch
+from mult_search_func import *
 from query_def import * #give query options
 from content_to_list import * #lists of sentences
 #from find_index import *
@@ -36,10 +36,18 @@ while True:
     if "new" == do:
         get_new_query() #keep funcdef in wiki.py
     elif "mult" in do:
+        #TEST
+        print(search_history_list)
+        #TEST
         sw = do[5:]
-        pagesdata = input("Enter pages separated by comma: ")
-        pageslist = list(pagesdata.split(","))
-        multsearch(pageslist,sw)
+        pagesdata = input("Enter pages separated by comma or index num: ")
+        if "," in pagesdata:
+            pageslist = list(pagesdata.split(","))
+            search_history(pageslist) # NOT DEFINED ERROR
+            multsearch(pageslist,sw)
+        elif "," not in pagesdata:
+            indexnum = int(pagesdata)
+            multsearch(search_history_list[indexnum],sw)
     elif "report sent" in do:
         n=1
         sw = do[12:]
