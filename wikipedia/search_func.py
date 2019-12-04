@@ -15,6 +15,6 @@ def open_image(page,index):
     print("OPENING: %s" % page.images[index])
     webbrowser.open(page.images[index])
 
-def open_link(page,index):
+def open_reference(page,index):
     print("OPENING: %s" % page.references[index])
     webbrower.open(page.references[index])

@@ -39,9 +39,9 @@ while True:
         pagesdata = input("Enter pages separated by comma: ")
         pageslist = list(pagesdata.split(","))
         multsearch(pageslist,sw)
-    elif "find" in do:
+    elif "report sent" in do:
         n=1
-        sw = do[5:]
+        sw = do[12:]
         query = input("Enter page to search: ")
         report_sentences(query,sw)
     elif "search" in do:

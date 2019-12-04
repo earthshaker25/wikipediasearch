@@ -1,5 +1,5 @@
 #import wikipedia
-#BASIC FUNCTIONS FOR QUERY GIVEN
+#BASIC FUNCTIONS FOR QUERY GIVEN, TECHNICALLY UNNECESSARY
 
 def get_name(page):
     print("Page name: %s" % page.title)
