@@ -1,4 +1,6 @@
 import webbrowser
+import sys
+from termcolor import colored,cprint
 
 #SEARCH FUNCTIONS FOR QUERY GIVEN
 
@@ -12,9 +14,9 @@ def search_multiple_pages_for_word(page,word):
         pass
     
 def open_image(page,index):
-    print("OPENING: %s" % page.images[index])
+    cprint("OPENING: %s" % page.images[index],'green')
     webbrowser.open(page.images[index])
 
 def open_reference(page,index):
-    print("OPENING: %s" % page.references[index])
+    cprint("OPENING: %s" % page.references[index],'green')
     webbrower.open(page.references[index])
