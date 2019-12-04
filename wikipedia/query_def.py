@@ -42,7 +42,7 @@ def query_given(query):
             report_sentences(query,sw)
 
             
-#Images and links search for index
+#Images and references search for index
         elif "find index image" in do:
             find = do[17:]
             find_image_index(query,find)
@@ -59,7 +59,7 @@ def query_given(query):
             print("You chose index %s" % index)
             open_image(query,index)
         elif "open reference" in do:
-            index = do[10:]
+            index = do[15:]
             index = int(index)
             print("You chose index %s" % index)
             open_reference(query,index)
