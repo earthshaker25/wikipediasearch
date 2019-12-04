@@ -6,8 +6,12 @@ To get help, type -h<br/>
 
 To search for a wikipedia page: `search x`<br/>
 To set a main wikipedia page: `new`<br/>
-To search multiple pages for a single word: `mult x`<br/>
 To list sentences containing a single word: `report sent x`<br/>
+
+###### Mult Search
+To search multiple pages for words: `mult x`<br/>
+Separate search terms with the '&' symbol
+*Known problems: If a page checks false for all terms, it will list only the first search term as false. Pages will end up on both contains and notcontains list, which must be fixed.*
 
 ## If you have set a page to work with prompt "Query actions: "
 
@@ -23,7 +27,7 @@ To print a list of links on the page (not openable): `links`<br/>
 
 ### Searching for Information
 To report if a single word is found in the content: `search x`<br/>
-To report from a list of words what words are found in the content: `searches x`<br/>
+To report from a list of words what words are found in the content: `mult x`<br/>
 To list the sentences that contain a single word: `report sent x`<br/>
 
 To find the number of images: `len list images`<br/>
