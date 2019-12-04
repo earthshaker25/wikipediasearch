@@ -39,7 +39,9 @@ while True:
         #TEST
         print(search_history_list)
         #TEST
-        sw = do[5:]
+        #Elimintes mult
+        w = do[5:]
+        sw = list(w.split("&"))
         pagesdata = input("Enter pages separated by comma or index num: ")
         if "," in pagesdata:
             pageslist = list(pagesdata.split(","))
@@ -49,6 +51,8 @@ while True:
         elif "," not in pagesdata:
             indexnum = int(pagesdata)
             multsearch(search_history_list[indexnum],sw,[])
+    elif "breakdown" in do: #breakdown the multsearch info
+        pass
     elif "report sent" in do:
         n=1
         sw = do[12:]

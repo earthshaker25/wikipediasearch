@@ -11,9 +11,11 @@ def search_history(pageslist):
 
 #not sure if this is needed
 def store_original_length(olist):
+    global original_length_of_list
     original_length_of_list = len(olist)
     return original_length_of_list
 
+#Word is now a list
 def multsearch(list1,word,contains=[]):
     pages = []
     notcontains = []
@@ -29,19 +31,20 @@ def multsearch(list1,word,contains=[]):
                 p = c.title
                 c = c.content.lower()
                 #print("Repeat contains %s" % contains)
-                if word in c:
-                    if p in contains:
-                        #print("Doubles check")
-                        continue
+                for w in word:
+                    if w in c:#Cannot do list
+                        if p in contains:
+                            #print("Doubles check")
+                            continue
+                        else:
+                            contains.append(p)
+                            print("%s, %s: True" % (p,w))
                     else:
-                        contains.append(p)
-                        print("%s: True" % p)
-                else:
-                    if p not in notcontains:
-                        notcontains.append(p)
-                        print("%s: False" % p)
-                    else:
-                        continue
+                        if (p not in notcontains) and (p not in contains):
+                            notcontains.append(p)
+                            print("%s, %s: False" % (p,w))
+                        else:
+                            continue
     except wikipedia.exceptions.DisambiguationError:
         print("'%s' was too vague" % v) # v is input,list to use is list1
         correction = input("Please specify your term: ")
@@ -54,11 +57,16 @@ def multsearch(list1,word,contains=[]):
         #print(contains)
         #Continues from error index, will change the length of list1
         multsearch(list1[errorindex:],word,contains)
-    #Adjust so only prints if proper fraction
-    print("Final %s " % contains) # Contains seems to keep variables, find a way to reset contains
+    #Adjust so only prints if proper fraction, done
+    print("Final %s " % contains)
     print("Final not%s " % notcontains)
-    if (len(contains)/len(list1)) <= 1:
-        print("Result: %s/%s contain the word '%s'" % (len(contains),len(list1),word))
+    if (len(list1)==original_length_of_list):
+        print("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word))
+    else:
+        print("Broken result, lenlist1 != original length")
+        print("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word))
+
+        #Final result print is always correct
 
 #SING WORD FOR CONTENT PRINT
 
