@@ -9,10 +9,10 @@ def search_history(pageslist):
     search_history_list.append(pageslist)
     return search_history_list
 
-def multsearch(list1,word):
+def multsearch(list1,word,contains=[]):
     pages = []
-    contains = []
     notcontains = []
+    print("start/restart %s" % contains)
     try:
         for v in list1: # Convert to wiki.page, add try block, now v = input value
             v = wikipedia.page(v)
@@ -37,11 +37,11 @@ def multsearch(list1,word):
         errorindex = list1.index(v)
         #Replace with correction
         list1[errorindex] = correction
-        #Run function again with new list
+        #TESTS
         print(list1)
         print(contains)
-        #Continue from error index? Decide. Right now it does the whole list
-        multsearch(list1,word)
+        #Continues from error index
+        multsearch(list1[errorindex:],word,contains)
     print("Result: %s/%s contain the word '%s'" % (len(contains),(len(list1)),word))
     #Reset lists, necessary?
     page = []
