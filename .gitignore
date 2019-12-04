@@ -30,6 +30,9 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 
+#__pycache__
+*.pyc
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
