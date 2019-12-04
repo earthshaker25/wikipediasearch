@@ -9,9 +9,9 @@ def search_history(pageslist):
     search_history_list.append(pageslist)
     return search_history_list
 
+#not sure if this is needed
 def store_original_length(olist):
     original_length_of_list = len(olist)
-    print(original_length_of_list)
     return original_length_of_list
 
 def multsearch(list1,word,contains=[]):
@@ -59,11 +59,6 @@ def multsearch(list1,word,contains=[]):
     print("Final not%s " % notcontains)
     if (len(contains)/len(list1)) <= 1:
         print("Result: %s/%s contain the word '%s'" % (len(contains),len(list1),word))
-    #Reset lists, not working.
-    page = []
-    contains = []
-    notcontains = []
-    print(contains,notcontains)
 
 #SING WORD FOR CONTENT PRINT
 
