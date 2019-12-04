@@ -16,6 +16,7 @@ def store_original_length(olist):
     return original_length_of_list
 
 #Word is now a list
+#Will search for words based on importance, the first word is most, precedingly will check. Terms should be similar
 def multsearch(list1,word,contains=[]):
     pages = []
     notcontains = []
@@ -39,7 +40,7 @@ def multsearch(list1,word,contains=[]):
                         else:
                             contains.append(p)
                             print("%s, %s: True" % (p,w))
-                    else:
+                    else: #Does not loop through everyword
                         if (p not in notcontains) and (p not in contains):
                             notcontains.append(p)
                             print("%s, %s: False" % (p,w))
@@ -58,13 +59,12 @@ def multsearch(list1,word,contains=[]):
         #Continues from error index, will change the length of list1
         multsearch(list1[errorindex:],word,contains)
     #Adjust so only prints if proper fraction, done
-    print("Final %s " % contains)
-    print("Final not%s " % notcontains)
+    #print("Final %s " % contains)
+    #print("Final not%s " % notcontains)
     if (len(list1)==original_length_of_list):
         print("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word))
     else:
-        print("Broken result, lenlist1 != original length")
-        print("Result: %s/%s contain the word(s) '%s'" % (len(contains),len(list1),word))
+        pass
 
         #Final result print is always correct
 
