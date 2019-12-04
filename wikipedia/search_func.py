@@ -3,7 +3,7 @@ import webbrowser
 #SEARCH FUNCTIONS FOR QUERY GIVEN
 
 def search_page_for_word(page,word):
-    if word in page.content:
+    if word in page.content.lower():
         print("The word '%s' is in this page!" % word)
     else:
         print("'%s' not found on this page" % word)
