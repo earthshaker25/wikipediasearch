@@ -5,6 +5,7 @@ from basic_func import *
 from mult_search_func import multsearch
 from query_def import * #give query options
 from content_to_list import * #lists of sentences
+#from find_index import *
 
 #Function to define and work with a query
 def get_new_query():
