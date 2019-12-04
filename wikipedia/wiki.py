@@ -32,7 +32,7 @@ def get_new_query():
 while True:
     #Input Line
     do = input("Next: ")
-    if "new" in do:
+    if "new" == do:
         get_new_query() #keep funcdef in wiki.py
     elif "mult" in do:
         sw = do[5:]
@@ -47,9 +47,9 @@ while True:
     elif "search" in do:
         query = do[7:]
         print(wikipedia.search(query))
-    elif "quit" in do:
+    elif "quit" == do:
         break
-    elif "-h" in do:
+    elif "-h" == do:
         print("Useful commands: Title of page: name, Page URL: url, Content, images, links, Search for a word: search")
     else:
         print("Command not found! Please try again!")

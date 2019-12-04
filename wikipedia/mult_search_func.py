@@ -1,5 +1,5 @@
 import wikipedia
-#SEARCHING FOR A SPECIFIC WORD
+#SEARCHING FOR A SPECIFIC WORD AMONG MULTIPLE PAGES
 def multsearch(list1,word):
     pages = []
     contains = []
@@ -34,3 +34,9 @@ def singsearch(page,word):
         print("'%s' not found" % word)
         return False
 
+def wordssearch(words,page):
+    for i in words:
+        if i in page.content:
+            print("%s: True" % i)
+        elif i not in page.content:
+            print("%s: False" % i)
