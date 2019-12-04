@@ -10,7 +10,7 @@ To list sentences containing a single word: `report sent x`<br/>
 
 ###### Mult Search
 To search multiple pages for words: `mult x`<br/>
-Separate search terms with the '&' symbol
+Separate search terms with the '&' symbol<br/>
 *Known problems: If a page checks false for all terms, it will list only the first search term as false. Pages will end up on both contains and notcontains list, which must be fixed.*
 
 ## If you have set a page to work with prompt "Query actions: "
