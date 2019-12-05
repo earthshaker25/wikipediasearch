@@ -56,12 +56,12 @@ def query_given(query):
         elif "open image" in do:
             index = do[11:]
             index = int(index)
-            print("You chose index %s" % index)
+            cprint("You chose index %s" % index,'magenta')
             open_image(query,index)
         elif "open reference" in do:
             index = do[15:]
             index = int(index)
-            print("You chose index %s" % index)
+            cprint("You chose index %s" % index,'magenta')
             open_reference(query,index)
         elif "len list images" == do:
             print(len(query.images))
@@ -69,8 +69,8 @@ def query_given(query):
             print(len(query.references))
 #Exit options
         elif "quit" in do:
-            print("Query actions exited")
+            cprint("Query actions exited",'magenta')
             break
         elif "new" in do:
-            print("Rerouting to general actions")
+            cprint("Rerouting to general actions",'magenta')
             break

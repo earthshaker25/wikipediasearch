@@ -29,5 +29,5 @@ def report_sentences(page,word):
             else:
                 continue
     elif x == False:
-        print("Word not found anywhere on the page. Returning.")
+        cprint("Word not found anywhere on the page. Returning.",'red')
         return

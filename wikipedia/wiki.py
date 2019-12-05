@@ -27,7 +27,7 @@ def get_new_query():
         except wikipedia.exceptions.PageError:
             print("That page apparently does not exist. Please try again")
             continue
-        print("New Query Found: %s" % query)
+        cprint("New Query Found: %s" % query,'magenta')
         query_given(query) #from import
         break
 
@@ -68,4 +68,4 @@ while True:
     elif "-h" == do:
         print("Useful commands: Title of page: name, Page URL: url, Content, images, links, Search for a word: search")
     else:
-        print("Command not found! Please try again!")
+        cprint("Command not found! Please try again!",red)

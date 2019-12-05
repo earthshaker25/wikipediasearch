@@ -14,9 +14,9 @@ def search_multiple_pages_for_word(page,word):
         pass
     
 def open_image(page,index):
-    cprint("OPENING: %s" % page.images[index],'green')
+    cprint("OPENING: %s" % page.images[index],'magenta')
     webbrowser.open(page.images[index])
 
 def open_reference(page,index):
-    cprint("OPENING: %s" % page.references[index],'green')
+    cprint("OPENING: %s" % page.references[index],'magenta')
     webbrower.open(page.references[index])
