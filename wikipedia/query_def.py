@@ -43,10 +43,10 @@ def query_given(query):
 
             
 #Images and references search for index
-        elif "find index image" in do:
+        elif "find image index" in do:
             find = do[17:]
             find_image_index(query,find)
-        elif "find index reference" == do:
+        elif "find reference index" == do:
             find = do[21:]
             find_reference_index(query,find)
 
